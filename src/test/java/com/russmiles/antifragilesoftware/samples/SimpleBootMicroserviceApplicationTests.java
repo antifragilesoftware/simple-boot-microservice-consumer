@@ -1,4 +1,4 @@
-package com.atomist.samples;
+package com.russmiles.antifragilesoftware.samples;
 
 import org.junit.Before;
 import org.junit.Test;
