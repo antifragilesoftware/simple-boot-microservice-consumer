@@ -6,7 +6,7 @@ First make sure you're running in an environment that has docker available to yo
 
 $ mvn package docker:build
 
-Once completed you will have an atomist/simple-boot-microservice-consumer image available, as seen by executing:
+Once completed you will have an antifragilesoftware/simple-boot-microservice-consumer image available, as seen by executing:
 
 $ docker images
 
