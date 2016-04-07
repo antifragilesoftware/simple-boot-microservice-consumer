@@ -17,6 +17,9 @@ spring:
       discovery:
         preferIpAddress: true
         instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+    circuit:
+      breaker:
+        enabled: true
 
 consumed.microservice.name: "microservice1"
 

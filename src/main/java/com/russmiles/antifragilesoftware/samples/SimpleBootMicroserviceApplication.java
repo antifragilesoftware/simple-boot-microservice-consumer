@@ -7,9 +7,9 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.ServiceInstance;
+import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
-import org.springframework.cloud.netflix.hystrix.EnableHystrix;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,7 +19,7 @@ import org.springframework.web.client.RestTemplate;
 @SpringBootApplication
 @RestController
 @EnableDiscoveryClient
-@EnableHystrix
+@EnableCircuitBreaker
 public class SimpleBootMicroserviceApplication {
 
     @Value("${consumed.microservice.name}")
@@ -32,7 +32,6 @@ public class SimpleBootMicroserviceApplication {
     private RestTemplate restTemplate;
 
     @RequestMapping("/")
-    @HystrixCommand
     public String home() {
         return "Simple Boot Microservice Consumer Alive!";
     }
